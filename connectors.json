@@ -1,0 +1,40 @@
+[
+	{
+		"name": "testapi",
+		"title": "TestApi",
+		"description": "",
+		"version": "1.0",
+		"tags": [
+			"service"
+		],
+		"icon": {
+			"type": "url",
+			"value": "//s3.amazonaws.com/images.tray.io/static/icons/testapi.png"
+		},
+		"messages": [
+			{
+				"name": "sample_message",
+				"title": "Sample message",
+				"description": "Just a sample message.",
+				"input_schema": {
+					"type": "object",
+					"properties": {},
+					"required": [],
+					"advanced": [],
+					"$schema": "http://json-schema.org/draft-04/schema#",
+					"additionalProperties": false
+				},
+				"output_schema": {
+					"$schema": "http://json-schema.org/draft-04/schema#",
+					"type": "object",
+					"properties": {
+						"result": {
+							"type": "string"
+						}
+					}
+				},
+				"dynamic_output": false
+			}
+		]
+	}
+]

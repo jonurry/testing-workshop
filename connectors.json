@@ -13,25 +13,194 @@
 		},
 		"messages": [
 			{
-				"name": "sample_message",
-				"title": "Sample message",
-				"description": "Just a sample message.",
+				"name": "create_character",
+				"title": "Create Character",
 				"input_schema": {
 					"type": "object",
-					"properties": {},
-					"required": [],
-					"advanced": [],
+					"properties": {
+						"username": {
+							"type": "string",
+							"default_jsonpath": "$.auth.username",
+							"title": "Username"
+						},
+						"password": {
+							"type": "string",
+							"default_jsonpath": "$.auth.password",
+							"title": "Password"
+						},
+						"name": {
+							"type": "string",
+							"title": "Name"
+						},
+						"race": {
+							"type": "string",
+							"title": "Race"
+						},
+						"weapon": {
+							"type": "string",
+							"title": "Weapon"
+						}
+					},
+					"required": [
+						"username",
+						"password",
+						"name",
+						"race",
+						"weapon"
+					],
+					"advanced": [
+						"username",
+						"password"
+					],
 					"$schema": "http://json-schema.org/draft-04/schema#",
 					"additionalProperties": false
 				},
-				"output_schema": {
-					"$schema": "http://json-schema.org/draft-04/schema#",
+				"dynamic_output": false
+			},
+			{
+				"name": "delete_character",
+				"title": "Delete Character",
+				"input_schema": {
 					"type": "object",
 					"properties": {
-						"result": {
-							"type": "string"
+						"username": {
+							"type": "string",
+							"default_jsonpath": "$.auth.username",
+							"title": "Username"
+						},
+						"password": {
+							"type": "string",
+							"default_jsonpath": "$.auth.password",
+							"title": "Password"
+						},
+						"character_id": {
+							"type": "integer",
+							"title": "Character id"
 						}
-					}
+					},
+					"required": [
+						"username",
+						"password",
+						"character_id"
+					],
+					"advanced": [
+						"username",
+						"password"
+					],
+					"$schema": "http://json-schema.org/draft-04/schema#",
+					"additionalProperties": false
+				},
+				"dynamic_output": false
+			},
+			{
+				"name": "get_character",
+				"title": "Get Character",
+				"input_schema": {
+					"type": "object",
+					"properties": {
+						"username": {
+							"type": "string",
+							"default_jsonpath": "$.auth.username",
+							"title": "Username"
+						},
+						"password": {
+							"type": "string",
+							"default_jsonpath": "$.auth.password",
+							"title": "Password"
+						},
+						"character_id": {
+							"type": "integer",
+							"title": "Character id"
+						}
+					},
+					"required": [
+						"username",
+						"password",
+						"character_id"
+					],
+					"advanced": [
+						"username",
+						"password"
+					],
+					"$schema": "http://json-schema.org/draft-04/schema#",
+					"additionalProperties": false
+				},
+				"dynamic_output": false
+			},
+			{
+				"name": "list_characters",
+				"title": "List Characters",
+				"input_schema": {
+					"type": "object",
+					"properties": {
+						"username": {
+							"type": "string",
+							"default_jsonpath": "$.auth.username",
+							"title": "Username"
+						},
+						"password": {
+							"type": "string",
+							"default_jsonpath": "$.auth.password",
+							"title": "Password"
+						}
+					},
+					"required": [
+						"username",
+						"password"
+					],
+					"advanced": [
+						"username",
+						"password"
+					],
+					"$schema": "http://json-schema.org/draft-04/schema#",
+					"additionalProperties": false
+				},
+				"dynamic_output": false
+			},
+			{
+				"name": "update_character",
+				"title": "Update Character",
+				"input_schema": {
+					"type": "object",
+					"properties": {
+						"username": {
+							"type": "string",
+							"default_jsonpath": "$.auth.username",
+							"title": "Username"
+						},
+						"password": {
+							"type": "string",
+							"default_jsonpath": "$.auth.password",
+							"title": "Password"
+						},
+						"character_id": {
+							"type": "integer",
+							"title": "Character id"
+						},
+						"name": {
+							"type": "string",
+							"title": "Name"
+						},
+						"race": {
+							"type": "string",
+							"title": "Race"
+						},
+						"weapon": {
+							"type": "string",
+							"title": "Weapon"
+						}
+					},
+					"required": [
+						"username",
+						"password",
+						"character_id"
+					],
+					"advanced": [
+						"username",
+						"password"
+					],
+					"$schema": "http://json-schema.org/draft-04/schema#",
+					"additionalProperties": false
 				},
 				"dynamic_output": false
 			}

@@ -3,11 +3,19 @@
 	Documentation: https://github.com/trayio/falafel#global-message-schemas
 */
 
-
 module.exports = {
-
-	input: {
-		// Add generic schema inputs (API keys etc) in here
-	}
-
+  input: {
+    username: {
+      type: "string",
+      required: true,
+      advanced: true,
+      defaultJsonPath: "$.auth.username"
+    },
+    password: {
+      type: "string",
+      required: true,
+      advanced: true,
+      defaultJsonPath: "$.auth.password"
+    }
+  }
 };

@@ -6,7 +6,7 @@
     "@trayio/falafel": "^1.20.0"
   },
   "scripts": {
-    "start": "node-dev main.js",
+    "start": "node-dev main.js"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
@@ -21,10 +21,6 @@
     "grunt": "^1.0.4",
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-watch": "^1.1.0",
-    "jest": "^24.8.0",
-    "jest-json-schema": "^2.0.2",
-    "jest-json-schema-extended": "0.0.2",
-    "nock": "^10.0.6",
     "node-dev": "^4.0.0"
   },
   "repository": {

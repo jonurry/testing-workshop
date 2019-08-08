@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "7756b2c0-925d-4a41-a1bd-b895507d587d",
+		"name": "testing_workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "testapi",
+			"item": [
+				{
+					"name": "Get Character",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/characters/131",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters",
+								"131"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Characters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/characters/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Character",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1234-5678-abcde-fghij-lmnog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/characters/127",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters",
+								"127"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Character",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1234-5678-abcde-fghij-lmnog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Character\": {\n\t\t\"Name\": \"Mithrandir\",\n\t\t\"Race\": \"Man\",\n\t\t\"Weapon\": \"Staff\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/characters/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Character",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1234-5678-abcde-fghij-lmnog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Character\": {\n\t\t\"Name\": \"Elrond\",\n\t\t\"Race\": \"Elf\",\n\t\t\"Weapon\": \"Sabre\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/characters/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Access Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\t\"Username\": \"Tolkien\",\n\t\t\"Password\": \"Sauronsucks123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "connector",
+			"item": [
+				{
+					"name": "private_get_access_token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"123-def\",\n  \"header\": {\n    \"message\": \"get_access_token\"\n  },\n  \"body\": {\n  \t\"username\": \"Tolkien\",\n  \t\"password\": \"Sauronsucks123\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8989/send/123-def",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"send",
+								"123-def"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list_characters",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"123-def\",\n  \"header\": {\n    \"message\": \"list_characters\"\n  },\n  \"body\": {\n  \t\"username\": \"Tolkien\",\n  \t\"password\": \"Sauronsucks123\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8989/send/123-def",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"send",
+								"123-def"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_character",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"123-def\",\n  \"header\": {\n    \"message\": \"get_character\"\n  },\n  \"body\": {\n  \t\"username\": \"Tolkien\",\n  \t\"password\": \"Sauronsucks123\",\n  \t\"character_id\": 123\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8989/send/123-def",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"send",
+								"123-def"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_character",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"123-def\",\n  \"header\": {\n    \"message\": \"update_character\"\n  },\n  \"body\": {\n  \t\"username\": \"Tolkien\",\n  \t\"password\": \"Sauronsucks123\",\n  \t\"character_id\": 123,\n  \t\"name\": \"Mithrandir\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8989/send/123-def",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"send",
+								"123-def"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_character",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"123-def\",\n  \"header\": {\n    \"message\": \"delete_character\"\n  },\n  \"body\": {\n  \t\"username\": \"Tolkien\",\n  \t\"password\": \"Sauronsucks123\",\n  \t\"character_id\": 123\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8989/send/123-def",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"send",
+								"123-def"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_character",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"123-def\",\n  \"header\": {\n    \"message\": \"create_character\"\n  },\n  \"body\": {\n  \t\"username\": \"Tolkien\",\n  \t\"password\": \"Sauronsucks123\",\n  \t\"character_id\": 123,\n  \t\"name\": \"Lurtz\",\n  \t\"race\": \"Orc\",\n  \t\"weapon\": \"bow\"\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8989/send/123-def",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8989",
+							"path": [
+								"send",
+								"123-def"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

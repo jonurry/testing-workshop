@@ -22,22 +22,22 @@ describe("End to end connector test", () => {
           expect(output.Data.Character).toEqual(character);
         });
     });
-    // it("Should delete a character", () => {
-    //   return falafel.testapi
-    //     .deleteCharacter({
-    //       ...baseParams,
-    //       character_id: character.Id
-    //     })
-    //     .then(() => {
-    //       return falafel.testapi
-    //         .getCharacter({
-    //           ...baseParams,
-    //           character_id: character.Id
-    //         })
-    //         .catch(err => {
-    //           return expect(err.response.statusCode).toEqual(404);
-    //         });
-    //     });
-    // });
+    it("Should delete a character", () => {
+      return falafel.testapi
+        .deleteCharacter({
+          ...baseParams,
+          character_id: character.Id
+        })
+        .then(() => {
+          return falafel.testapi
+            .getCharacter({
+              ...baseParams,
+              character_id: character.Id
+            })
+            .catch(err => {
+              return expect(err.response.statusCode).toEqual(404);
+            });
+        });
+    });
   });
 });

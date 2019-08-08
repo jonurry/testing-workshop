@@ -6,7 +6,7 @@
 module.exports = {
   method: "post",
   url: "characters",
-  before: falafel.helpers.before.authorization,
+  before: falafel.helpers.before.createCharacter,
   options: {
     headers: {
       Authorization: `Bearer {{access_token}}`

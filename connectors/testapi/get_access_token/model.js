@@ -6,8 +6,8 @@
 module.exports = {
   method: "post",
   url: "auth",
+  before: falafel.helpers.before.hashAuth,
   data: {
-    Username: "{{username}}",
-    Password: "{{password}}"
+    Credentials: "{{auth_hash}}"
   }
 };

@@ -19,8 +19,14 @@ let username = "Tolkien";
 let password = "Sauronsucks123";
 let accessToken = "1234-5678-abcde-fghij-lmnog";
 
+const crypto = require("crypto");
+const hash = crypto
+  .createHash("md5")
+  .update(`${username}:${password}`)
+  .digest("hex");
+
 app.post("/auth", (req, res) => {
-  if (req.body.Username === username && req.body.Password === password) {
+  if (req.body.Credentials === hash) {
     return res.status(200).send({
       AccessToken: accessToken
     });
@@ -40,11 +46,13 @@ app.get("/characters", (req, res) =>
 
 //GET
 app.get("/characters/:id", (req, res) => {
-  res.send({
+  let char = charDB.find(char => {
+    return char.Id == req.params.id;
+  });
+  if (char === undefined) return res.status(404).send();
+  return res.status(200).send({
     Data: {
-      Character: charDB.find(char => {
-        return char.Id == req.params.id;
-      })
+      Character: char
     }
   });
 });
